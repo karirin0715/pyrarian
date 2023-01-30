@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+Table: <strong>{{ table_name }}</strong>
+
+<br>
+<table class="table is-striped">
+	<thead>
+		<tr>
+			<th>no</th>
+			<th>name</th>
+			<th>rogical name</th>
+			<th>type</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{% for column in columns %}
+		
+		<tr>
+			<th>{{ forloop.counter }}</th>
+			<td>{{ column.column_name }}</th>
+			<td>{{ column.rogical_name }}</th>
+			<td>{{ column.type }}</th>
+		</tr>
+
+		{% endfor %}
+
+	</tbody>
+
+</table>
+
+{% endblock %}

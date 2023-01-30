@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table is-striped">
+	<thead>
+		<tr>
+			<th>no</th>
+			<th>name</th>
+			<th>rogical name</th>
+			<th>remark</th>
+		</tr>
+	</thead>
+	<tbody>
+
+		{% for table in tables %}
+		
+		<tr>
+			<th>{{ forloop.counter }}</th>
+			<td><a href={% url 'table_name' table.slug %}>{{ table.table_name }}<a></th>
+			<td>{{ table.rogical_name }}</th>
+			<td>{{ table.remark }}</th>
+		</tr>
+
+		{% endfor %}
+
+	</tbody>
+
+</table>
+
+{% endblock %}
